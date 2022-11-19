@@ -1,0 +1,16 @@
+<div class="bg-dark border-right p-3" id="sidebar">
+    <h3 class="text-center text-light">
+      Gifts-App
+    </h3>
+
+    <div class="list-group list-reset ">
+      <a *ngFor="let item of historial" 
+          href="#" 
+          class="list-group-item list-group-item-action 
+                  fs-5 fw-light bg-dark text-light"
+          (click)="buscar(item)"
+      >
+        {{item | titlecase}}
+      </a>
+    </div>
+</div>

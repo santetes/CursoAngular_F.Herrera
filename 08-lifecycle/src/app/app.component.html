@@ -1,0 +1,10 @@
+<h1>Ciclo de vida en Angular</h1>
+<hr />
+
+<button (click)="alternar()">{{ mostrar ? "ocultar" : "mostrar" }}</button>
+
+<app-pagina1
+  (comunicaNombre)="reciboNombre($event)"
+  *ngIf="mostrar"
+></app-pagina1>
+<app-muestra-nombre [nombre]="nombre"></app-muestra-nombre>

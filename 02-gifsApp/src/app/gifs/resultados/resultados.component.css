@@ -1,0 +1,8 @@
+.card {
+  height: 25vh;
+  border: 3px solid rgb(80, 80, 78);
+}
+
+img {
+  max-height: 15vh;
+}

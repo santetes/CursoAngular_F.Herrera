@@ -1,0 +1,74 @@
+<h1>
+  {{ encabezado }}
+</h1>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+  <div fxFlex="50" fxLayout="column">
+    <!-- -------------------------------------- -->
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="20px">
+      <mat-form-field fxFlex="45">
+        <mat-label>Super Heroe</mat-label>
+        <input matInput type="text" required [(ngModel)]="heroe.superhero" />
+      </mat-form-field>
+      <mat-form-field fxFlex="45">
+        <mat-label>Alter Ego</mat-label>
+        <input matInput type="text" required [(ngModel)]="heroe.alter_ego" />
+      </mat-form-field>
+    </div>
+    <!-- -------------------------------------- -->
+    <mat-form-field>
+      <mat-label>Primera Aparación</mat-label>
+      <input
+        matInput
+        type="text"
+        required
+        [(ngModel)]="heroe.first_appearance"
+      />
+    </mat-form-field>
+    <!-- -------------------------------------- -->
+    <mat-form-field>
+      <mat-label>Personajes</mat-label>
+      <input matInput type="text" required [(ngModel)]="heroe.characters" />
+    </mat-form-field>
+    <!-- -------------------------------------- -->
+    <mat-form-field appearance="legacy">
+      <mat-label>Creador</mat-label>
+      <mat-select [(ngModel)]="heroe.publisher" name="creador" required>
+        <mat-option *ngFor="let opcion of publisher" [value]="opcion.id">
+          {{ opcion.desc }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- -------------------------------------- -->
+    <mat-form-field>
+      <mat-label>Foto Url</mat-label>
+      <input matInput type="text" [(ngModel)]="heroe.altImg" />
+    </mat-form-field>
+    <!-- -------------------------------------- -->
+    <br />
+    <div fxLayout="row" fxFlexAlign="center" fxLayoutGap="30px">
+      <button mat-raised-button color="primary" (click)="guardar()">
+        <mat-icon>done</mat-icon>
+        Guardar
+      </button>
+      <button
+        *ngIf="heroe.id"
+        mat-raised-button
+        color="warn"
+        (click)="borrar()"
+      >
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+      <button mat-raised-button color="accent" (click)="cancelar()">
+        <mat-icon>highlight_off</mat-icon>
+        Cancelar
+      </button>
+    </div>
+  </div>
+  <div fxFlex="50">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <img [src]="heroe | imagenPipe" />
+    </div>
+  </div>
+</div>

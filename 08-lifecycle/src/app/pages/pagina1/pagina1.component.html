@@ -1,0 +1,5 @@
+<p>{{ "Bienvenido a la página de " + nombre }}</p>
+<input (keyup.enter)="pasoNombre()" type="text" [(ngModel)]="nombre" />
+<h3>
+  Timer: <span>{{ seconds }}</span>
+</h3>

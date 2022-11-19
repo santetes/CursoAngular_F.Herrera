@@ -1,0 +1,90 @@
+<h2>Template: Switches</h2>
+<hr />
+
+<form [formGroup]="miFormulario">
+  <!-- Radio -->
+  <div class="row mb-3 border rounded-3 p-2">
+    <label class="col-sm-3 col-form-label">Género</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          id="radioMasculino"
+          type="radio"
+          value="M"
+          formControlName="genero"
+        />
+        <label class="form-check-label" for="radioMasculino"> Masculino </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          value="F"
+          formControlName="genero"
+          id="radioFemenino"
+        />
+        <label class="form-check-label" for="radioFemenino"> Femenino </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          value="SN"
+          formControlName="genero"
+          id="sinDeterminar"
+        />
+        <label class="form-check-label" for="sinDeterminar"> Sin determinar </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radio -->
+  <div class="row mb-3 border rounded-3 p-2">
+    <label class="col-sm-4 col-check-label">Notificaciones</label>
+
+    <div class="col-sm-8 form-check form-switch">
+      <input
+        formControlName="notificaciones"
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+      />
+      <label class="form-check-label">Activar Notificaciones</label>
+    </div>
+  </div>
+  <!-- Check -->
+  <div class="row mb-3 border rounded-3 p-2">
+    <div class="col-sm-9 form-check">
+      <input
+        class="form-check-input"
+        formControlName="condiciones"
+        type="checkbox"
+        id="flexCheckDefault"
+      />
+      <label class="form-check-label" for="flexCheckDefault"> Términos y condiciones </label>
+    </div>
+  </div>
+
+  <!-- Botón Submit -->
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)="guardar()" class="btn btn-primary float-end">Enviar</button>
+    </div>
+  </div>
+</form>
+
+<h5>Valor del formulario</h5>
+<pre>{{ miFormulario.value | json }}</pre>
+<h5>Errores en campos</h5>
+<h6>Género</h6>
+<pre>{{ miFormulario.controls["genero"]?.errors | json }}</pre>
+
+<h6>condiciones</h6>
+<pre>{{ miFormulario.controls["condiciones"]?.errors | json }}</pre>
+<h5>Persona</h5>
+<pre>{{ persona | json }}</pre>
+<h5>Valido</h5>
+<pre>{{ miFormulario.errors | json }}</pre>
+<!-- <h5>Condiciones</h5>
+<pre>{{ miFormulario.valid | json }}</pre> -->

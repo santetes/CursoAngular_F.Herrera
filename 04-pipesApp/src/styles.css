@@ -1,0 +1,12 @@
+html,
+body {
+  margin: 10px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  background-color: var(--surface-d);
+  font-family: var(--font-family);
+}
+
+.text-layout {
+  color: var(--text-color);
+}

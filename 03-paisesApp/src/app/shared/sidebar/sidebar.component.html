@@ -1,0 +1,29 @@
+<h2>Busquedas</h2>
+<hr />
+<ul class="list-group">
+  <!-- routerLinkActive: manda la clase indicada al componente cuando este enlace se encuentra activado  -->
+  <li
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+  >
+    Buscar País
+  </li>
+
+  <li
+    routerLink="region"
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action"
+  >
+    Buscar Región
+  </li>
+
+  <li
+    routerLink="capital"
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action"
+  >
+    Buscar Capital
+  </li>
+</ul>

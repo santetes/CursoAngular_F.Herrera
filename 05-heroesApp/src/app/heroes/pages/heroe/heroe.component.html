@@ -1,0 +1,39 @@
+<div
+  class="todaPantalla"
+  fxLayoutAlign="center center"
+  *ngIf="!heroe; else divHeroe"
+>
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #divHeroe>
+  <div fxLayout="row" fxLayout.sm="column" fxLayoutGap="30px">
+    <div fxFlex="50">
+      <h1 fxLayout="row" fxLayoutAlign="center">
+        {{ heroe.superhero }}- <small>{{ heroe.alter_ego }}</small>
+      </h1>
+      <mat-divider></mat-divider>
+      <br />
+      <div fxLayout="row" fxLayoutAlign="center">
+        <img
+          class="animate__animated animate__zoomIn"
+          [src]="heroe | imagenPipe"
+        />
+      </div>
+    </div>
+    <div fxFlex="50">
+      <h1>{{ heroe.publisher }}</h1>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item>{{ heroe.first_appearance }}</mat-list-item>
+        <mat-list-item>{{ heroe.characters }}</mat-list-item>
+        <mat-list-item>{{ heroe.publisher }}</mat-list-item>
+        <mat-list-item>{{ heroe.alter_ego }}</mat-list-item>
+      </mat-list>
+      <br />
+      <button mat-raised-button color="primary" routerLink="/heroes/listado">
+        Regresar
+      </button>
+    </div>
+  </div>
+</ng-template>

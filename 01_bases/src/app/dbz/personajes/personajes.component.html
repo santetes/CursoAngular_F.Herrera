@@ -1,0 +1,10 @@
+
+<h3 class="text-center">Personajes</h3>
+<hr>
+<ul class="text-center list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let personaje of personajes" >
+        <span class="text-danger">{{personaje.nombre}}</span>
+         - <span class="text-primary">{{personaje.poder | number }}</span>
+    </li>
+</ul>
+

@@ -1,0 +1,26 @@
+<h3 class="text-center animate__animated animate__fadeIn">
+  Buscar por Region
+  <small class="fw-lighter fs-5 text-primary">{{ descripcion }}</small>
+</h3>
+<hr />
+<div class="animate__animated animate__fadeIn">
+  <h5>Seleccione la región</h5>
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regiones"
+        class="btn ms-2 mb-2"
+        (click)="activarRegion(region); buscar(region)"
+        [class]="getClaseCss(region)"
+      >
+        {{ region | titlecase }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!hayError && paises.length > 0" class="row">
+  <div class="col">
+    <app-pais-tabla [paises]="paises"></app-pais-tabla>
+  </div>
+</div>

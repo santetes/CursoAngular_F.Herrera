@@ -1,0 +1,9 @@
+<ul class="list-group mt-2">
+  <li
+    *ngFor="let pais of paisesSugeridos"
+    class="list-group-item list-group-item-action animate__animated animate__fadeIn"
+    (click)="buscar(pais)"
+  >
+    {{ tipo == "pais" ? pais.name : pais.capital }}
+  </li>
+</ul>

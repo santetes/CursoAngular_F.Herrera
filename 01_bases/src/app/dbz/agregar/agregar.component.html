@@ -1,0 +1,23 @@
+<h3 class="text-center">Agregar</h3>
+        <hr>
+        <form (ngSubmit)="agregarHeroe()">
+
+            <label for="nombreInput" class="form-label">Nombre</label>
+            <input 
+                type="text" 
+                id="nombreInput"
+                name="nombre" 
+                autocomplete="off"
+                class="form-control"
+                [(ngModel)]="nuevo.nombre">
+
+            <label for="poderInput" class="form-label">Poder</label>
+            <input 
+                type="number"
+                id="poderInput" 
+                name="poder" 
+                class="form-control"
+                [(ngModel)]="nuevo.poder">
+
+            <button  type="submit" class="btn btn-primary mt-3">Agregar</button>
+        </form>

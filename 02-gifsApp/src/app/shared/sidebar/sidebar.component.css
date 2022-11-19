@@ -1,0 +1,15 @@
+#sidebar {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 20vw;
+}
+
+a:hover {
+  color: goldenrod !important;
+  font-size: 23px !important;
+}
+
+a {
+  transition-property: font-size;
+  transition-duration: 0.1s;
+}
